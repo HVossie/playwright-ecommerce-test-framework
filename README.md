@@ -99,6 +99,8 @@ playwright-ecommerce-test-framework/
 │   ├── login.spec.ts
 │   └── cart.spec.ts
 │
+├── screenshots/               # Test report and execution images for README
+│
 ├── playwright.config.ts       # Playwright configuration
 ├── package.json
 ├── README.md
