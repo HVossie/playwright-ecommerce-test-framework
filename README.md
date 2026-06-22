@@ -2,110 +2,117 @@
 
 ![Playwright Tests](https://github.com/HVossie/playwright-ecommerce-test-framework/actions/workflows/playwright.yml/badge.svg)
 
-An end-to-end test automation framework built with Playwright and TypeScript, covering core e-commerce user flows including login, product interaction, and cart functionality.
-The framework is designed to reflect real-world QA practices, including reusable test architecture, maintainability, and scalable test design.
+An end-to-end test automation framework built with Playwright and TypeScript for core e-commerce user journeys such as login, product selection, and cart validation.
 
-This project was built as a portfolio piece to demonstrate practical software testing skills, including UI automation, structured test design, and cross-browser testing. It simulates real-world user journeys and follows best practices used in modern QA and software engineering environments.
+This project was built to practice structured UI automation, reusable test design, cross-browser coverage, and CI-based test execution in a clean portfolio-ready setup.
 
 ## Features
 
-- End-to-end UI test automation
-- Cross-browser testing (Chromium, Firefox, WebKit)
-- Page Object Model (POM) for maintainable test structure
-- Positive and negative test scenarios
-- Cart and product interaction testing
-- Automated test execution via GitHub Actions
-- HTML test reports and debugging support
+- End-to-end UI test automation with Playwright
+- Cross-browser coverage for Chromium, Firefox, and WebKit
+- Page Object Model structure for reusable page interactions
+- Positive and negative login test coverage
+- Cart add/remove test coverage
+- HTML reporting for test review
+- GitHub Actions workflow for automated test runs
 
 ## Tech Stack
 
 - Playwright
 - TypeScript
 - Node.js
-- GitHub Actions (CI/CD)
-- Git / GitHub
+- GitHub Actions
 
 ## Test Coverage
 
-The framework currently automates the following flows:
+The current suite covers these user flows:
 
 ### Authentication
 
 - Successful login with valid credentials
 - Error handling for invalid login attempts
 
-### Product & Cart
+### Product and Cart
 
-- Add product to cart
-- Verify product appears in cart
-- Remove product from cart
-- Validate cart state updates correctly
+- Add a product to the cart
+- Verify the product appears in the cart
+- Remove a product from the cart
+- Verify the cart updates correctly after removal
 
 ## How to Run
 
-Clone the repository
-```
+1. Clone the repository
+
+```bash
 git clone https://github.com/HVossie/playwright-ecommerce-test-framework.git
 ```
-Navigate into the project
-```
+
+2. Navigate into the project
+
+```bash
 cd playwright-ecommerce-test-framework
 ```
-Install dependencies
-```
+
+3. Install dependencies
+
+```bash
 npm install
 ```
-Install Playwright browsers
-```
+
+4. Install Playwright browsers
+
+```bash
 npx playwright install
 ```
-Run tests
-```
+
+5. Run the test suite
+
+```bash
 npx playwright test
 ```
-Open test report
-```
+
+6. Open the HTML report
+
+```bash
 npx playwright show-report
 ```
 
 ## Test Execution
 
-Tests are executed across multiple browsers:
+The suite runs across:
 
 - Chromium
 - Firefox
 - WebKit
 
-Example command:
-```
+For a visible browser run during debugging:
+
+```bash
 npx playwright test --headed
 ```
-This allows visual execution of tests for debugging and demonstration purposes.
 
 ## Project Structure
 
-```
+```text
 playwright-ecommerce-test-framework/
-├── .github/
-│   └── workflows/
-│       └── playwright.yml      # CI pipeline for running tests
-│
-├── pages/                     # Page Object Model classes
-│   ├── LoginPage.ts
-│   ├── ProductsPage.ts
-│   └── CartPage.ts
-│
-├── tests/                     # Test specifications
-│   ├── login.spec.ts
-│   └── cart.spec.ts
-│
-├── screenshots/               # Test report and execution images for README
-│
-├── playwright.config.ts       # Playwright configuration
-├── package.json
-├── README.md
-└── .gitignore
+|-- .github/
+|   `-- workflows/
+|       `-- playwright.yml      # CI workflow for automated test execution
+|-- pages/                      # Page Object Model classes
+|   |-- CartPage.ts
+|   |-- LoginPage.ts
+|   `-- ProductsPage.ts
+|-- screenshots/                # Images used in the README
+|-- tests/                      # Playwright test specifications
+|   |-- cart.spec.ts
+|   `-- login.spec.ts
+|-- playwright.config.ts        # Playwright configuration
+|-- package.json
+|-- package-lock.json
+|-- README.md
+`-- .gitignore
 ```
+
 ## Test Report Preview
 
 ### Test Summary
@@ -114,27 +121,26 @@ playwright-ecommerce-test-framework/
 ### Test Details
 ![Test Detail](screenshots/test-detail.png)
 
-### Test Execution (Headed Mode)
+### Test Execution
 ![Test Run](screenshots/test-run.png)
 
 ## What I Learned
 
-- Building end-to-end test automation with Playwright
-- Implementing the Page Object Model for scalable test design
-- Writing maintainable and reusable test code
-- Performing cross-browser testing
-- Structuring a real-world automation framework
-- Integrating automated tests with GitHub Actions
-- Debugging UI tests using Playwright tools and reports
+- Building end-to-end UI automation with Playwright
+- Structuring tests with the Page Object Model
+- Writing reusable and maintainable test code
+- Running the same suite across multiple browsers
+- Using GitHub Actions for automated test execution
+- Reviewing failures and traces through Playwright reporting tools
 
 ## Possible Improvements
 
-- Add checkout and payment flow testing
-- Introduce API testing alongside UI tests
-- Implement test data management strategies
-- Add parallel test execution configuration
-- Improve reporting with custom dashboards
-- Expand test coverage for edge cases
+- Add checkout flow coverage
+- Add API-level test coverage alongside UI tests
+- Expand test scenarios for additional edge cases
+- Improve test data handling for larger suites
+- Add more advanced reporting or dashboards
 
 ## Author
-Hanroux
+
+- Hanroux Vos
