@@ -4,6 +4,7 @@ import { LoginPage } from '../pages/LoginPage';
 test('user can login successfully', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
+  // This happy-path test proves valid credentials reach the inventory page.
   await loginPage.goto();
   await loginPage.login('standard_user', 'secret_sauce');
 
@@ -13,6 +14,8 @@ test('user can login successfully', async ({ page }) => {
 test('invalid login shows error', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
+  // This negative-path test checks that failed authentication surfaces an
+  // error instead of silently continuing.
   await loginPage.goto();
   await loginPage.login('wrong_user', 'wrong_password');
 

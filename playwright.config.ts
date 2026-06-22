@@ -12,6 +12,8 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  // Keep test files in one dedicated folder so Playwright only picks up
+  // runnable specs from a predictable location.
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -25,6 +27,8 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    // Shared browser settings live here so every project inherits the same
+    // debugging and runtime behavior unless a project overrides it.
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
@@ -34,6 +38,8 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    // Running the same suite across multiple engines helps catch browser-
+    // specific issues without duplicating the tests themselves.
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
